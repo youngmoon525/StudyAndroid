@@ -4,15 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/app_main_color"
+
     >
     <TextView
         android:text="@string/version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/tv_num_style"
+        />
 
     <TextView
         android:text="@string/server_ip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/tv_num_style"
+        android:textStyle="normal"
+        />
+    <TextView
+        android:text="@string/server_ip"
+        style="@style/tv_num_style"/>
+    <TextView
+        android:text="@string/server_ip"
+        style="@style/tv_num_style"/>
+    <TextView
+        android:text="@string/server_ip"
+        style="@style/tv_num_style"/>
+    <TextView
+        android:text="@string/server_ip"
+        style="@style/tv_num_style_extend"/>
+
+
+
+
 </LinearLayout>

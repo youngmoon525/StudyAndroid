@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         btn_change.setOnClickListener(v -> {
+            //imgv1.setImageResource(R.drawable.img1); <- 실제 이미지 바꾸기
             imgFlag++;
             if(imgFlag==4) imgFlag = 1;
             Log.d("버튼", "imgFlag: " + imgFlag);

@@ -1,24 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#fff"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
     <RelativeLayout
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            style="@style/carrot_main_menu_tv"
             android:layout_alignParentLeft="true"
-            android:text="나의당근"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="나의 당근"/>
         <ImageView
             android:layout_alignParentRight="true"
-            android:src="@drawable/ic_cookie"
+            android:src="@drawable/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <View
+        style="@style/carrot_under_line"
+        android:layout_height="1dp"/>
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_profile"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_nickname"
+            android:layout_toRightOf="@id/imgv_profile"
+            android:text="닉네임"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_address"
+            android:layout_toRightOf="@id/imgv_profile"
+            android:layout_below="@id/tv_nickname"
+            android:text="농성동 29229292"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:padding="15dp"
+        android:background="@drawable/shape_carrot_dotline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"/>
+        <TextView
+            android:textColor="#424242"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="중고거래는 이제 당근페이로 해보세요!"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                style="@style/carrot_ic_top_linear"
+                >
+                <ImageView
+                    style="@style/carrot_ic_top_imgv"
+                    android:src="@drawable/ic_top_menu1"/>
+                <TextView
+                    style="@style/carrot_ic_top_tv"
+                    android:text="판매내역"/>
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/carrot_ic_top_linear"
+                >
+                <ImageView
+                    style="@style/carrot_ic_top_imgv"
+                    android:src="@drawable/ic_top_menu2"/>
+                <TextView
+                    style="@style/carrot_ic_top_tv"
+                    android:text="구매내역"/>
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/carrot_ic_top_linear"
+                >
+                <ImageView
+                    style="@style/carrot_ic_top_imgv"
+                    android:src="@drawable/ic_top_menu3"/>
+                <TextView
+                    style="@style/carrot_ic_top_tv"
+                    android:text="관심목록"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    <View
+        style="@style/carrot_under_line"
+        android:layout_height="10dp"/>
+
+        <TextView
+            style="@style/carrot_main_menu_tv"
+            android:layout_alignParentLeft="true"
+            android:text="사장님 메뉴"/>
+
+        <LinearLayout
+            style="@style/carrot_category_layout"
+            >
+            <ImageView
+                style="@style/carrot_category_imgv"
+                android:src="@drawable/ic_menu1"/>
+            <TextView
+                style="@style/carrot_category_tv"
+                android:text="비즈프로필 관리"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/carrot_category_layout"
+            >
+            <ImageView
+                style="@style/carrot_category_imgv"
+                android:src="@drawable/ic_menu2"/>
+            <TextView
+                style="@style/carrot_category_tv"
+                android:text="광고"/>
+        </LinearLayout>
+
+
+        <View
+            style="@style/carrot_under_line"
+            android:layout_height="10dp"/>
+        <TextView
+            style="@style/carrot_main_menu_tv"
+            android:layout_alignParentLeft="true"
+            android:text="나의 활동"/>
+        <LinearLayout
+            style="@style/carrot_category_layout"
+            >
+            <ImageView
+                style="@style/carrot_category_imgv"
+                android:src="@drawable/ic_menu3"/>
+            <TextView
+                style="@style/carrot_category_tv"
+                android:text="내 동네 설정"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/carrot_category_layout"
+            >
+            <ImageView
+                style="@style/carrot_category_imgv"
+                android:src="@drawable/ic_menu4"/>
+            <TextView
+                style="@style/carrot_category_tv"
+                android:text="동네 인증하기"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/carrot_category_layout"
+            >
+            <ImageView
+                style="@style/carrot_category_imgv"
+                android:src="@drawable/ic_menu5"/>
+            <TextView
+                style="@style/carrot_category_tv"
+                android:text="키워드 알림"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/carrot_category_layout"
+            >
+            <ImageView
+                style="@style/carrot_category_imgv"
+                android:src="@drawable/ic_menu6"/>
+            <TextView
+                style="@style/carrot_category_tv"
+                android:text="모아보기"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/carrot_category_layout"
+            >
+            <ImageView
+                style="@style/carrot_category_imgv"
+                android:src="@drawable/ic_menu6"/>
+            <TextView
+                style="@style/carrot_category_tv"
+                android:text="당근 가계부"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/carrot_category_layout"
+            >
+            <ImageView
+                style="@style/carrot_category_imgv"
+                android:src="@drawable/ic_menu1"/>
+            <TextView
+                style="@style/carrot_category_tv"
+                android:text="비즈프로필 관리"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

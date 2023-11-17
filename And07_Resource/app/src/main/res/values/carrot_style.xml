@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="under_line">#EDEDED</color>
+    <color name="ic_text_color">#000</color>
+
+    <style name="carrot_under_line">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#EDEDED</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+
+    <style name="carrot_main_menu_tv">
+
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="carrot_ic_top_linear">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+
+    <style name="carrot_ic_top_imgv">
+
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+    <style name="carrot_ic_top_tv">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">@color/ic_text_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+
+    <style name="carrot_category_layout">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="carrot_category_imgv">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+
+    </style>
+    <style name="carrot_category_tv">
+
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+
+
+</resources>

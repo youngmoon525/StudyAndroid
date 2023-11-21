@@ -8,11 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edt_id , edt_pw;
     Button btn_login;
+    TextView tv_join;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,22 @@ public class LoginActivity extends AppCompatActivity {
         edt_id = findViewById(R.id.edt_id);
         edt_pw = findViewById(R.id.edt_pw);
         btn_login = findViewById(R.id.btn_login);
+        tv_join = findViewById(R.id.tv_join);
+
+        tv_join.setOnClickListener(v -> {
+            Intent intent = new Intent(this , JoinActivity.class);
+            startActivity(intent);
+        });
+
+//        tv_join.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this , JoinActivity.class);
+//            }
+//        });
+
+
+
         //setOnclickListner.
         //editText에 있는 글자를 가져오는 메소드 : editText.getText() 메소드임.
         //id가 admin 비밀번호가 admin1234 인 경우 로그가 성공이라고 찍히고 그 외에는 실패!가 찍히게 해보기

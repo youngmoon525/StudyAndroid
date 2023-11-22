@@ -68,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("listkey",list);//dto가 직렬화가 되어있기때문. List<직렬화>==List<로그인클래스>
 
                 startActivity(intent);
+                finish();//현재 액티비티 종료.
+
             }else{
                 Log.d("로그인 실패", edt_pw.getText()+"");
             }

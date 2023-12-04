@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:scaleType="fitXY"
+        android:id="@+id/imgv_chart"
+        android:src="@drawable/chart_img1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:text="1"
+        android:id="@+id/tv_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+        <View
+            android:layout_marginTop="10dp"
+            android:background="#B1B1B1"
+            android:layout_width="10dp"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:gravity="left|bottom"
+            android:text="Perfect Night"
+            android:id="@+id/tv_title"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:gravity="left|top"
+            android:textColor="#646464"
+            android:textSize="15dp"
+            android:text="LE SSERAFIM (르세라핌)"
+            android:id="@+id/tv_singer"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+    </LinearLayout>
+
+
+
+
+    <ImageView
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center"
+        android:src="@drawable/play_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

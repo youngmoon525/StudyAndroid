@@ -10,5 +10,8 @@ public class RecyclerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
+
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container , new MelonFragment()).commit();
     }
 }

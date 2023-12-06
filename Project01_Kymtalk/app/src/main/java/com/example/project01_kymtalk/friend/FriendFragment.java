@@ -3,6 +3,7 @@ package com.example.project01_kymtalk.friend;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,9 @@ public class FriendFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentFriendBinding.inflate(inflater , container , false);
+
+        binding.recvFriend.setAdapter(new FriendRecvAdapter(inflater));
+        binding.recvFriend.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
         return binding.getRoot();

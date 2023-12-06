@@ -22,3 +22,11 @@
 -현재는 Actionbar를 커스텀하는게 귀찮아서 비슷한 구조를 가진 레이아웃을 만들고 사용.
 -테마에서 NoActionbar를 주면 Actionbar자체가 없음(null) , 그 외에는 getSupportActionbar라는 메소드로 액션바에 접근이 가능하다.
 
+
+
+3.이미지를 둥글게 처리하기
+    1.CardView를 이용한 방법
+        - 이미지뷰를 카드뷰 내에 넣고 스케일타입을 centerCrop으로 바꿈 넓이 높이는 match_parent
+        - 카드뷰에 이미지를 어떤 사이즈로 보여줄지 넣어주고 radius로 모서리를 둥글게 만든다.
+    2.CircleImageView ( 외부 라이브러리 활용 ) , Glide
+    3.이미지를 그냥 둥글게 편집(x)

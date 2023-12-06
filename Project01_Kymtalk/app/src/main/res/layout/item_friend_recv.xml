@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    >
 
 
         <androidx.cardview.widget.CardView
@@ -12,6 +15,7 @@
             app:cardCornerRadius="15dp"
             >
             <ImageView
+                android:id="@+id/imgv_profile"
                 android:src="@drawable/friend_profile_img5"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
@@ -22,10 +26,14 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/friend_name_textview_black_left"
+                    android:layout_height="wrap_content"
+                    android:text="YM" />
         <TextView
-            style="@style/friend_name_textview_black_left"
-            android:text="YM"/>
-        <TextView
+            android:id="@+id/tv_msg"
             style="@style/friend_name_textview_gray_left"
             android:text="상태 매세지"/>
         </LinearLayout>

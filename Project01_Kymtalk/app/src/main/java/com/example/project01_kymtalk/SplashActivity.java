@@ -18,6 +18,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        getSupportActionBar().hide();//액션바 숨기기.( NoActionbar의 경우 NullPointerException발생! )
+
         //ProgressDiaog : 로딩중에 사용자가 어떤 동작을 하고있는지 인지를 못하는 경우 프로그램을 오류나 , 버그로 의심을 하고 기다림을 멈춤 -> 조작
         //조작(x) -> 앱은 로딩중이다(O)
         ProgressDialog dialog = new ProgressDialog(this);

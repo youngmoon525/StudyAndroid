@@ -45,6 +45,7 @@ public class FriendRecvAdapter extends RecyclerView.Adapter<FriendRecvAdapter.Vi
 
         h.binding.lnFriend.setOnClickListener(v->{
             Intent intent = new Intent(context , FriendDetailActivity.class);
+            intent.putExtra("dto" , list.get(i));
             context.startActivity(intent);
         });
 

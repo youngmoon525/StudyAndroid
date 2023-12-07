@@ -1,5 +1,7 @@
 package com.example.project01_kymtalk.friend;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,13 @@ public class FriendRecvAdapter extends RecyclerView.Adapter<FriendRecvAdapter.Vi
 
     LayoutInflater inflater;//parent를 이용해서 초기화 하는 방법 나중에.
     ArrayList<FriendDTO> list;
+    Context context;
+
+    public FriendRecvAdapter(LayoutInflater inflater, ArrayList<FriendDTO> list, Context context) {
+        this.inflater = inflater;
+        this.list = list;
+        this.context = context;
+    }
 
     public FriendRecvAdapter(LayoutInflater inflater, ArrayList<FriendDTO> list) {
         this.inflater = inflater;
@@ -33,6 +42,12 @@ public class FriendRecvAdapter extends RecyclerView.Adapter<FriendRecvAdapter.Vi
         h.binding.imgvProfile.setImageResource( list.get(i).getProfileImg() );
         h.binding.tvName.setText( list.get(i).getName() );
         h.binding.tvMsg.setText( list.get(i).getMsg() );
+
+        h.binding.lnFriend.setOnClickListener(v->{
+            Intent intent = new Intent(context , FriendDetailActivity.class);
+            context.startActivity(intent);
+        });
+
     }
 
     @Override

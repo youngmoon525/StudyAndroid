@@ -8,10 +8,22 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     android:id="@+id/ln_friend"
+    android:layout_margin="10dp"
     >
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        app:cardCornerRadius="15dp"
+        >
 
     <FrameLayout
-        android:background="#000"
+        android:background="@drawable/item_opentalk_gradient_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -21,22 +33,27 @@
         android:layout_height="200dp"
         app:cardCornerRadius="15dp"
         >
+
         <ImageView
+
             android:id="@+id/imgv_profile"
-            android:src="@drawable/friend_profile_img5"
-            android:scaleType="centerCrop"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/friend_profile_img5" />
     </androidx.cardview.widget.CardView>
 
 
     </FrameLayout>
-
+    </androidx.cardview.widget.CardView>
+    </FrameLayout>
     <RelativeLayout
         android:layout_width="150dp"
         android:layout_height="200dp">
 
         <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/tv_cnt"
             android:textSize="15dp"
             android:textStyle="bold"
             android:textColor="#fff"
@@ -45,19 +62,23 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:id="@+id/tv_cnt"
             android:layout_margin="10dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:textSize="12dp"
             android:textColor="#fff"
-            android:text="삼국지 러쉬\nOrigins 존모방"
+            android:text="457명"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:textSize="12dp"
             android:textColor="#fff"
-            android:text="삼국지 러쉬\nOrigins 존모방"
+            android:text="방금 대화"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

@@ -35,11 +35,11 @@ public class OpenSubDAO {
 
     public ArrayList<OpenSubDTOs.OpenSub3DTO> getOpenSub4List(){
         ArrayList<OpenSubDTOs.OpenSub3DTO> list = new ArrayList<>();
-        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img3 ,206 , "","방금 대화"));
-        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img3 ,1286 , "","방금 대화"));
-        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img3 ,1360 , "","방금 대화"));
-        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img3 ,456 , "","방금 대화"));
-        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img3 ,752 , "","방금 대화"));
+        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img3 ,206 , "채팅방 제목","방금 대화"));
+        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img4 ,1286 , "채팅방 제2목","방금 대화"));
+        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img5 ,1360 , "3채팅방 제목","방금 대화"));
+        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img6 ,456 , "채팅방 제목4","방금 대화"));
+        list.add(new OpenSubDTOs().new OpenSub3DTO(R.drawable.friend_profile_img7 ,752 , "채팅방 제목5","방금 대화"));
         return list;
     }
 

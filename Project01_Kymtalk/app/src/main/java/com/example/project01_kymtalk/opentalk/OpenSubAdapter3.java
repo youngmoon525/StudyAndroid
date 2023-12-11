@@ -28,7 +28,9 @@ public class OpenSubAdapter3 extends RecyclerView.Adapter<OpenSubAdapter3.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder h, int i) {
         h.binding.imgvProfile.setImageResource(list.get(i).getBackgroundImgRes());
-
+        h.binding.tvTitle.setText(list.get(i).getRoomTitle());
+        h.binding.tvRecent.setText(list.get(i).getRecentChat());
+        h.binding.tvCnt.setText(list.get(i).getChatCnt()+"명");
 
     }
 

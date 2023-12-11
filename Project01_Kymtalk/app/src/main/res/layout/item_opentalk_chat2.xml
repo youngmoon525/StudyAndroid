@@ -17,7 +17,7 @@
         app:cardCornerRadius="15dp"
         >
         <ImageView
-            android:id="@+id/imgv_profile"
+            android:id="@+id/imgvChat"
             android:src="@drawable/friend_profile_img5"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
@@ -32,11 +32,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
-                android:layout_alignParentLeft="true"
                 android:id="@+id/tv_name"
                 style="@style/friend_name_textview_black_left"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:ellipsize="end"
+                android:maxLength="10"
+                android:maxLines="1"
                 android:text="채팅방 이름" />
 
             <TextView
@@ -51,6 +55,9 @@
         </RelativeLayout>
 
         <TextView
+            android:ellipsize="end"
+            android:maxLength="10"
+            android:maxLines="1"
             android:id="@+id/tv_tag"
             style="@style/friend_name_textview_gray_left"
             android:text="#자동차사진#사크팟터#어쩌고"/>

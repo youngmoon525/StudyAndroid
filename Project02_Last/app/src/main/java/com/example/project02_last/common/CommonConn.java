@@ -1,18 +1,17 @@
-package com.example.exam00_middletoand.common;
+package com.example.project02_last.common;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 
-import com.example.exam00_middletoand.R;
 
-import java.lang.invoke.MethodType;
+import com.example.project02_last.R;
+
 import java.util.HashMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.GET;
 
 public class CommonConn {
     //재사용 : URL , Param , Method???

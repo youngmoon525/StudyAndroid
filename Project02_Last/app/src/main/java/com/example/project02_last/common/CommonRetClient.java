@@ -1,4 +1,4 @@
-package com.example.exam00_middletoand.common;
+package com.example.project02_last.common;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;

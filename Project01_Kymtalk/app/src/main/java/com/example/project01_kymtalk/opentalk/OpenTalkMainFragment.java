@@ -26,6 +26,8 @@ public class OpenTalkMainFragment extends Fragment {
         binding = FragmentOpenTalkMainBinding.inflate(inflater , container , false);
         OpenTalkPagerAdapter adapter = new OpenTalkPagerAdapter(this , getFragmentList());
         binding.pager2.setAdapter(adapter);
+        binding.test.removeAllViews();
+        binding.testcontainer.addView(binding.chipGroup);
 
         binding.chipGroup.setOnCheckedChangeListener(new ChipGroup.OnCheckedChangeListener() {
             @Override

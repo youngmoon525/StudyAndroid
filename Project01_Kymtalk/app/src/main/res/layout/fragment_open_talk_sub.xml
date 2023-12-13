@@ -13,10 +13,11 @@
         android:layout_height="match_parent">
 
     <ImageView
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:scaleType="fitXY"
-        android:src="@drawable/friend_back_img1"
+        android:src="@drawable/banner_img1"
         android:layout_width="match_parent"
         android:layout_height="100dp"/>
 
@@ -89,6 +90,22 @@
         android:background="#EAEAEA"
         android:layout_width="match_parent"
         android:layout_height="10dp"/>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="15dp"
+            android:text="🍔지금 뜨는 오픈채팅"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_grp_opensub"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

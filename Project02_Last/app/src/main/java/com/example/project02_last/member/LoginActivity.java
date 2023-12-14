@@ -37,44 +37,30 @@ import kotlin.jvm.functions.Function2;
 public class LoginActivity extends AppCompatActivity {
 
     ActivityLoginBinding binding;
-    //네이티브 앱 : 6b31da7eff82c2b2b197a964fbc79efe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //NaverIdLoginSDK.initialize(context, {OAUTH_CLIENT_ID}, {OAUTH_CLIENT_SECRET}, {OAUTH_CLIENT_NAME})
-        //values -> key.xml ( gitignore )
-        //getString(R.string.cliendId)
         NaverIdLoginSDK.INSTANCE.initialize(this , getString(R.string.CLIENT_ID_NAVER),  getString(R.string.CLIENT_SEC_NAVER) , "Project02_Last");
 
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //error..
         Glide.with(this).load("https://taehyunha.files.wordpress.com/2020/05/cdd521b0d71ce352728ffe8055434b8be509dcf819b0d184e360a2699c2ab4413df86935009322be24d8778aa5ededf8d3fbc860f2931c41261cc214d2dfdd731eb47db6d9eb84aa015c90821384078cca79f92d0af79b36726f447190.gif")
                 .error(R.drawable.ic_launcher_foreground)// 에러 발생..
                 .fallback(R.drawable.ic_launcher_background)// null을 넘김..
                 .into(binding.imgvLogo);
 
-//        new CommonConn(this,"amama.kym").addParamMap("param","andData").onExcute((isResult, data) -> {
-//            Log.d("테스트", "onCreate: " + isResult + data);
-//        });
         binding.btnLogin.setOnClickListener(v->{
            login(binding.edtId.getText().toString() , binding.edtPw.getText().toString());
         });
-
-
         binding.imgvKakaoLogin.setOnClickListener(v-> {
             kakaoLogin(this);
-
         });
         naverLogin();
-
         //집에서 실행하면 해시키가 다름.-> 문서에 등록해줘야함.
         //getHashKey();
+
     }
-
-
-
     //kakao는 key값을 우리에게 제공x ( email , mobile )
     public void kakaoLogin(Context context){
         //KakaoSdk.init(this, "{NATIVE_APP_KEY}")
@@ -120,8 +106,6 @@ public class LoginActivity extends AppCompatActivity {
             UserApiClient.getInstance().loginWithKakaoAccount(context,callback);
         }
     }
-
-
     //naver는 email을 제공-> database social,id(email)
     public void naverLogin(){
         binding.buttonOAuthLoginImg.setOAuthLogin(new OAuthLoginCallback() {
@@ -169,8 +153,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
-
     private void getHashKey(){
         PackageInfo packageInfo = null;
         try {
@@ -191,12 +173,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-
     //일반 로그인
     public void login(String user_id , String user_pw){
         CommonConn conn = new CommonConn(this,"login.me");
         conn.addParamMap("user_id" , user_id);
-        conn.addParamMap("user_pw" , user_pw);
+        if(user_pw == null){
+            conn.addParamMap("social" , "y");
+        }else{
+            conn.addParamMap("user_pw" , user_pw);
+        }
+
         conn.onExcute((isResult, data) -> {
             //서버가 응답을 함.(또는 오류)
             //1.toJson ( 내가 StringJson으로 데이터를 줘야함 )
@@ -214,7 +200,5 @@ public class LoginActivity extends AppCompatActivity {
 
         });
     }
-
-
 
 }

@@ -1,11 +1,19 @@
 package com.example.project02_last;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.util.Log;
 
 import com.example.project02_last.common.CommonConn;
+import com.example.project02_last.common.CommonService;
+
+import java.util.HashMap;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new CommonConn(this,"amam.kym").addParamMap("param" , "Last").onExcute((isResult, data) -> {
-            Log.d("Last", "onCreate: " + data);
-        });
+
+
+
 
     }
 }

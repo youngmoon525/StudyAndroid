@@ -90,14 +90,16 @@
         app:strokeWidth="3dp" />
 
 
-    <Button
-        android:text="카카오 로그인"
+    <ImageView
+        android:id="@+id/imgv_kakao_login"
+        android:layout_margin="10dp"
+        android:src="@drawable/kakao_login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <Button
-        android:text="네이버 로그인"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <com.navercorp.nid.oauth.view.NidOAuthLoginButton
+        android:id="@+id/buttonOAuthLoginImg"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
 
     <LinearLayout
         android:layout_marginTop="10dp"
@@ -119,6 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+
 
 
 

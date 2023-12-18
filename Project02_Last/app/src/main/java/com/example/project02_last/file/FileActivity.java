@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -18,7 +20,19 @@ import android.util.Log;
 
 import com.bumptech.glide.Glide;
 import com.example.project02_last.R;
+import com.example.project02_last.common.CommonRetClient;
+import com.example.project02_last.common.CommonService;
 import com.example.project02_last.databinding.ActivityFileBinding;
+
+import java.io.File;
+import java.util.HashMap;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FileActivity extends AppCompatActivity {
     ActivityFileBinding binding;
@@ -28,6 +42,9 @@ public class FileActivity extends AppCompatActivity {
         binding = ActivityFileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         checkPermission();
+        //캐싱되어있는 이미지를 삭제함 -> 나중에 이미지가 많으면 새로 로딩을 다시 하기 때문에 느려질 가능성 있음.
+        //new ClearCacheTask(this).execute();
+        Glide.with(this).load("http://192.168.0.40/mid/file/test.jpg").into(binding.imgv);
 
         binding.imgv.setOnClickListener(v->{
             //여러 화면에서 재활용이 필요하다면 바뀌어야 할 부분들을 전부 파라메터로 빼고 , 메소드 형태로 바꿔주면 편함.
@@ -48,6 +65,23 @@ public class FileActivity extends AppCompatActivity {
 
         });
     }
+
+    //이전 까지 많이 사용되던 비동기 작업 (백그라운드)
+    class ClearCacheTask extends AsyncTask<Void, Void, Void>{
+        private Context context;
+
+        public ClearCacheTask(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            Glide.get(context).clearDiskCache();
+            //Glide.get(context).clearMemory();
+            return null;
+        }
+    }
+
 
     //os를 통해서 갤러리의 액티비티를 띄움. ( 사용자가 선택 -> 결과를 받아옴 )
     //Intent를 이용한 화면 전환 : 명시적(Activity->Activity) , 묵시적(암시적) (Activity->Action(Activity)
@@ -75,7 +109,25 @@ public class FileActivity extends AppCompatActivity {
             //onActivityResult: /-1/1/content://media/external/images/media/36/ORIGINAL/NONE/image/jpeg/1452801664
             //c:fakedirectoy
             Glide.with(this).load(data.getData()).into(binding.imgv);//불러온 이미지를 이미지뷰에 붙일수있는지?
-            getRealPath(data.getData());
+           // getRealPath(data.getData());
+            String filePath = getRealPath(data.getData());
+            //MultiPart 형태로 전송 (File)
+            //재사용이 필요하다면 CommonConn부분에 넣어주는것도가능함.(추후)  // mimeType 어떤 형태의 데이터 확장자나타입인지 명시
+            RequestBody file = RequestBody.create(MediaType.parse("image/jpeg") , new File(filePath));
+            MultipartBody.Part filePart = MultipartBody.Part.createFormData("andFile" , "test.jpg" , file);//name:Servlet 구분자 , 실제 파일명, 실제 파일
+            CommonService service = CommonRetClient.getApiClient().create(CommonService.class);
+            service.clientSendFile(" file.f" , new HashMap<>() , filePart).enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+
+                }
+            });
+
         }else if(requestCode == CAMARE_REQ){
 
         }
